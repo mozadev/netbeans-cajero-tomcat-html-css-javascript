@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CAJERO BANCO SANTANDER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilosCajero.css">
+    </head>
+
+    <body>
+
+        <form class="form" >
+
+            <h1 style="color:#FF5733" >BANCO SANTANDER</h1>
+            <label>cuenta 1 saldo: </label>
+            <input type="text" name="Cantidad1"  id="C1" value="1200"><br>
+            <label>cuenta 2 saldo: </label>
+            <input type="text" name="Cantidad2" id="C2" value="800"><br>
+            <h2 style="color:#581845">CANTIDAD</h2>
+            <input type="text" name=" " id="Cant" placeholder="Cantidad">
+            <br>
+            <hr>
+            <h2 style="color:#FF0000">Transferencias entre cuentas propias</h2>
+            <input type="button" value="Transferencias de Cuenta 1 a Cuenta 2" id="bt2" onclick="tranfCTA1aCTA2()">
+            <input type="button" value="Transferencias de Cuenta 2 a Cuenta 1" id="bt3" onclick="transCTA2aCTA1()">
+            <br>  
+            <h2 style="color:#FF0000">Depositos</h2>
+            <input type="button" value="Depositar A cuenta 1" id="bt4" onclick="depositoCTA1()">
+            <input type="button" value="Depositar A cuenta 2" id="bt5" onclick="depositoCTA2()">
+
+            <br > 
+            <h2 style="color:#FF0000">Retiros</h2>
+            <input type="button" value="Retirar DE cuenta 1" id="bt6" onclick="retiroDeCTA1()">
+            <input type="button" value="Retirar DE cuenta 2" id="bt7" onclick="retiroDeCTA2()">
+
+        </form>
+
+        <script>
+        
+        function tranfCTA1aCTA2() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C1').value = (Cantidad1 - CantidadTransaccion);
+                                    document.getElementById('C2').value = (Cantidad2 + CantidadTransaccion);
+
+            }
+                                    
+            
+            
+            
+            function transCTA2aCTA1() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C1').value = (Cantidad1 + CantidadTransaccion);
+                                    document.getElementById('C2').value = (Cantidad2 - CantidadTransaccion);
+
+            }
+                                    
+            
+            
+        
+        function depositoCTA1() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C1').value = (Cantidad1 + CantidadTransaccion);
+
+
+                                    }
+                                   
+            
+                                    function depositoCTA2() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C2').value = (Cantidad2 + CantidadTransaccion);
+
+                                    }
+                                    
+                                    function retiroDeCTA1() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C1').value = (Cantidad1 - CantidadTransaccion);
+
+                                    }
+                                    
+                                    function retiroDeCTA2() {
+
+                                            var CantidadTransaccion = parseInt(document.getElementById('Cant').value);
+                                    var Cantidad1 = parseInt(document.getElementById('C1').value);
+                                    var Cantidad2 = parseInt(document.getElementById('C2').value);
+                                    document.getElementById('C2').value = (Cantidad2 - CantidadTransaccion);
+
+                                    }
+                                    
+        </script>
+
+    </body>
+</html>
